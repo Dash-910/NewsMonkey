@@ -11,7 +11,7 @@ const News =(props)=>{
     const [totalResults,setTotalResults]=useState(0)
 
     const capitalizeFirstLetter=(string)=>{
-        return string.charAt(0).touppercase()+string.slice(1);
+        return string.charAt(0).toUpperCase()+string.slice(1);
     }
 
     const updateNews=async()=>{
@@ -59,7 +59,7 @@ const News =(props)=>{
                 {articles.map((element)=>
                 {
                     return <div className="col-md-4" key={element.url}>
-                        <NewsItem title={element.title ? element.title:""}description={element.description? element.description:""}imageUrl={element.urlToImage} newUrl={element.url} author={element.author} data={element.publishedAt} source={element.source.name}/>
+                        <NewsItem title={element.title ? element.title:" "}description={element.description? element.description:" "}imageUrl={element.urlToImage} newUrl={element.url} author={element.author} data={element.publishedAt} source={element.source.name}/>
 
                     </div>
                 })}
@@ -82,5 +82,5 @@ News.PropsTypes={
     category:PropTypes.string,
 }
 
-export default News
+export default News;
 
